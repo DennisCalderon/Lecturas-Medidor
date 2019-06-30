@@ -36,12 +36,13 @@
             this.btnProcesar = new System.Windows.Forms.Button();
             this.btnCargarExcel = new System.Windows.Forms.Button();
             this.dgvmedidor = new System.Windows.Forms.DataGridView();
+            this.cboExcel = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvmedidor)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExportar
             // 
-            this.btnExportar.Location = new System.Drawing.Point(690, 6);
+            this.btnExportar.Location = new System.Drawing.Point(704, 6);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(75, 31);
             this.btnExportar.TabIndex = 20;
@@ -50,15 +51,16 @@
             // 
             // cboSector
             // 
+            this.cboSector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSector.FormattingEnabled = true;
-            this.cboSector.Location = new System.Drawing.Point(33, 12);
+            this.cboSector.Location = new System.Drawing.Point(159, 12);
             this.cboSector.Name = "cboSector";
             this.cboSector.Size = new System.Drawing.Size(121, 21);
             this.cboSector.TabIndex = 19;
             // 
             // btnMostrarPadron
             // 
-            this.btnMostrarPadron.Location = new System.Drawing.Point(160, 6);
+            this.btnMostrarPadron.Location = new System.Drawing.Point(12, 6);
             this.btnMostrarPadron.Name = "btnMostrarPadron";
             this.btnMostrarPadron.Size = new System.Drawing.Size(141, 31);
             this.btnMostrarPadron.TabIndex = 18;
@@ -74,21 +76,23 @@
             // 
             // btnProcesar
             // 
-            this.btnProcesar.Location = new System.Drawing.Point(497, 6);
+            this.btnProcesar.Location = new System.Drawing.Point(539, 6);
             this.btnProcesar.Name = "btnProcesar";
             this.btnProcesar.Size = new System.Drawing.Size(114, 31);
             this.btnProcesar.TabIndex = 16;
             this.btnProcesar.Text = "Procesar y Guardar";
             this.btnProcesar.UseVisualStyleBackColor = true;
+            this.btnProcesar.Click += new System.EventHandler(this.btnProcesar_Click);
             // 
             // btnCargarExcel
             // 
-            this.btnCargarExcel.Location = new System.Drawing.Point(389, 6);
+            this.btnCargarExcel.Location = new System.Drawing.Point(331, 6);
             this.btnCargarExcel.Name = "btnCargarExcel";
             this.btnCargarExcel.Size = new System.Drawing.Size(75, 31);
             this.btnCargarExcel.TabIndex = 15;
             this.btnCargarExcel.Text = "Cargar Excel";
             this.btnCargarExcel.UseVisualStyleBackColor = true;
+            this.btnCargarExcel.Click += new System.EventHandler(this.btnCargarExcel_Click);
             // 
             // dgvmedidor
             // 
@@ -102,11 +106,22 @@
             this.dgvmedidor.Size = new System.Drawing.Size(783, 369);
             this.dgvmedidor.TabIndex = 14;
             // 
+            // cboExcel
+            // 
+            this.cboExcel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboExcel.FormattingEnabled = true;
+            this.cboExcel.Location = new System.Drawing.Point(412, 12);
+            this.cboExcel.Name = "cboExcel";
+            this.cboExcel.Size = new System.Drawing.Size(121, 21);
+            this.cboExcel.TabIndex = 21;
+            this.cboExcel.SelectedIndexChanged += new System.EventHandler(this.cboExcel_SelectedIndexChanged);
+            // 
             // PadronClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cboExcel);
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.cboSector);
             this.Controls.Add(this.btnMostrarPadron);
@@ -121,6 +136,7 @@
             this.Name = "PadronClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Padron de Clientes";
+            this.Load += new System.EventHandler(this.PadronClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvmedidor)).EndInit();
             this.ResumeLayout(false);
 
@@ -135,5 +151,6 @@
         internal System.Windows.Forms.Button btnProcesar;
         internal System.Windows.Forms.Button btnCargarExcel;
         internal System.Windows.Forms.DataGridView dgvmedidor;
+        internal System.Windows.Forms.ComboBox cboExcel;
     }
 }
